@@ -64,6 +64,8 @@ public class PopulaBanco {
 		em.close();
 
 	}
+	
+	//metodos
 
 	private static Autor geraAutor(String nome) {
 		Autor autor = new Autor();
