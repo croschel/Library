@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core">
+	
 
 <h:body>
 	<h1>Novo Livro</h1>
@@ -26,6 +28,24 @@
 			</h:panelGrid>
 		</fieldset>
 
+		<fieldset>
+			<legend>Dados do autor</legend>
+			<h:outputLabel value="Selecione o Autor" for="autor"/>
+			<h:selectOneMenu value="#{livroBean.autorId}" id="autor"> <!--value serve realmente saber o que vamos apresentar na view-->
+				<f:selectItems value="#{livroBean.autores}" var="autor" 
+						itemLabel="#{autor.nome}" itemValue="autor.id"/> <!-- Por mais que o metodo não se chama autores devemos retirar o "get da chamada no xhtml" -->>
+			</h:selectOneMenu>
+			<h:commandButton value="Gravar Autor" action="#{livroBean.gravarAutor}"/>
+		
+			<h:dataTable value="#{livroBean.autoresDoLivro}" var="autor">
+				<h:column>
+					<h:outputText value="#{autor.nome}"/>
+				</h:column>
+			</h:dataTable>
+		
+		</fieldset>
+		
+	
 		<h:commandButton value="Gravar" action="#{livroBean.gravar}" />
 	</h:form>
 </h:body>
