@@ -6,7 +6,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
 import br.com.caelum.livraria.dao.DAO;
-import br.com.caelum.livraria.modelo.*;
+import br.com.caelum.livraria.modelo.Autor;
+import br.com.caelum.livraria.modelo.Livro;
 
 @ManagedBean
 @ViewScoped
@@ -27,6 +28,9 @@ public class LivroBean {
 
 	public Livro getLivro() {
 		return livro;
+	}
+	public List<Livro> getLivros(){
+		return new DAO<Livro>(Livro.class).listaTodos();
 	}
 	
 	public List<Autor> getAutores(){
@@ -49,6 +53,9 @@ public class LivroBean {
 		}
 
 		new DAO<Livro>(Livro.class).adiciona(this.livro);
+		
+		this.livro = new Livro();
+		
 	}
 
 }
