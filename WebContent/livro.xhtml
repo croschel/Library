@@ -8,6 +8,7 @@
 <h:body>
 	<h1>Novo Livro</h1>
 	<h:form>
+		<h:messages/>
 		<fieldset>
 			<legend>Dados do Livro</legend>
 			<h:panelGrid columns="2">
@@ -22,7 +23,9 @@
 				<h:inputText id="preco" value="#{livroBean.livro.preco}" />
 
 				<h:outputLabel value="Data de Lançamento:" for="dataLancamento" />
-				<h:inputText id="dataLancamento" value="#{livroBean.livro.dataLancamento}" />
+				<h:inputText id="dataLancamento" value="#{livroBean.livro.dataLancamento.time}">
+					<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
+				</h:inputText>
 
 			</h:panelGrid>
 		</fieldset>
