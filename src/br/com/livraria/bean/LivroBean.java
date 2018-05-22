@@ -1,4 +1,4 @@
-package br.com.caelum.livraria.bean;
+package br.com.livraria.bean;
 
 import java.util.List;
 
@@ -9,9 +9,9 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.validator.ValidatorException;
 
-import br.com.caelum.livraria.dao.DAO;
-import br.com.caelum.livraria.modelo.Autor;
-import br.com.caelum.livraria.modelo.Livro;
+import br.com.livraria.dao.DAO;
+import br.com.livraria.modelo.Autor;
+import br.com.livraria.modelo.Livro;
 
 @ManagedBean
 @ViewScoped
