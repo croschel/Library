@@ -47,6 +47,7 @@ public class LivroBean {
 	public void gravarAutor() {
 		Autor autor = new DAO<Autor>(Autor.class).buscaPorId(this.autorId);
 		this.livro.adicionaAutor(autor);
+		System.out.println("Autor "+autor.getNome()+" Incluido na lista e aguardando ser linkado ao livro");
 	}
 
 	public void gravar() {
@@ -68,6 +69,11 @@ public class LivroBean {
 		if(!valor.startsWith("1")) {
 			throw new ValidatorException(new FacesMessage("o ISBN deveria começar com 1"));
 		}
+	}
+	
+	public String formAutor() {
+		System.out.println("Chamando o formulario do Autor");
+		return "autor?faces-redirect=true";
 	}
 
 }
