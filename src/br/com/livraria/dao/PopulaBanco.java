@@ -1,4 +1,4 @@
-package br.com.caelum.livraria.dao;
+package br.com.livraria.dao;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -7,8 +7,8 @@ import java.util.Date;
 
 import javax.persistence.EntityManager;
 
-import br.com.caelum.livraria.modelo.Autor;
-import br.com.caelum.livraria.modelo.Livro;
+import br.com.livraria.modelo.Autor;
+import br.com.livraria.modelo.Livro;
 
 public class PopulaBanco {
 
