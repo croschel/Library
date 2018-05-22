@@ -1,4 +1,4 @@
-package br.com.caelum.livraria.dao;
+package br.com.livraria.dao;
 
 import java.util.List;
 
