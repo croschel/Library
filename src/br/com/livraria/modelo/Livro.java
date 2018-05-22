@@ -1,4 +1,4 @@
-package br.com.caelum.livraria.modelo;
+package br.com.livraria.modelo;
 
 import java.util.ArrayList;
 import java.util.Calendar;
