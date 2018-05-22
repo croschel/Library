@@ -1,13 +1,15 @@
-package br.com.caelum.livraria.bean;
+//talkit.com.br/author/joaocunha
+
+package br.com.livraria.bean;
 
 import javax.faces.bean.ManagedBean;
 
-import br.com.caelum.livraria.dao.DAO;
-import br.com.caelum.livraria.modelo.Autor;
+import br.com.livraria.dao.DAO;
+import br.com.livraria.modelo.Autor;
 
 @ManagedBean
 public class AutorBean {
-
+	
 	private Autor autor = new Autor();
 
 	public Autor getAutor() {
