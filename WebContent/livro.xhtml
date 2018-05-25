@@ -62,6 +62,10 @@
 						<h:column>
 							<h:outputText value="#{autor.nome}"/>
 						</h:column>
+						
+						<h:column>
+							<h:commandLink value="X" action="#{livroBean.removerAutorDoLivro(autor)}"/>
+						</h:column>
 					</h:dataTable>
 					
 					<h:commandLink value="Cadastrar um Autor" action="#{livroBean.formAutor}" immediate="true"/>
@@ -70,10 +74,11 @@
 				
 			
 				<h:commandButton value="Gravar" action="#{livroBean.gravar}">
-					<f:ajax execute="@form" render="@form :tabelaLivros"/>
+					<f:ajax execute="@form" render="@form :formTabelaLivros:tabelaLivros"/>
 				</h:commandButton>
 			</h:form>
 			
+			<h:form id="formTabelaLivros">
 				<h:dataTable value="#{livroBean.livros}" var="livro" id="tabelaLivros">
 					
 					<h:column>
@@ -98,7 +103,20 @@
 						</h:outputText>
 					</h:column>
 					
+					<h:column>
+						<f:facet name="header">Alterar</f:facet>
+						<h:commandLink value="Alterar" action="#{livroBean.carregar(livro)}"/>
+					</h:column>
+					
+					<h:column>
+						<f:facet name="header">Remover</f:facet>
+						<h:commandLink value="Remover" action="#{livroBean.remover(livro)}"/>
+					</h:column>
+					
+					
+					
 				</h:dataTable>
+			</h:form>
 			
 			</h:body>
 			
