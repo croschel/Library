@@ -19,8 +19,18 @@ public class LivroBean {
 
 	private Livro livro = new Livro();
 	private Integer autorId;
+	private Integer livroId;
+
 	
 	//getters and setters
+	public Integer getLivroId() {
+		return livroId;
+	}
+
+	public void setLivroId(Integer livroId) {
+		this.livroId = livroId;
+	}
+
 	public Integer getAutorId() {
 		return autorId;
 	}
@@ -94,5 +104,9 @@ public class LivroBean {
 	
 	public void removerAutorDoLivro(Autor autor) {
 		this.livro.removeAutor(autor);
+	}
+	
+	public void carregarPorId() {
+		this.livro = new DAO<Livro>(Livro.class).buscaPorId(livroId);
 	}
 }
