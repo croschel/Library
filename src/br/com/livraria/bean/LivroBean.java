@@ -80,7 +80,7 @@ public class LivroBean {
 	}
 	
 	public void comecaComDigitoUm(FacesContext fc, UIComponent component, Object value) throws ValidatorException {
-		//método especial para usando facesContext para retornar exceção caso difite um ISBN não iniciado com 1
+		//método especial usando facesContext para retornar exceção caso digite um ISBN não iniciado com 1
 		String valor = value.toString();
 		if(!valor.startsWith("1")) {
 			throw new ValidatorException(new FacesMessage("o ISBN deveria começar com 1"));
